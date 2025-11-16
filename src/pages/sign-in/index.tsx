@@ -11,6 +11,7 @@ import {
 } from "@/components/ui/form"
 import supabase from "@/lib/supabase";
 import { zodResolver } from "@hookform/resolvers/zod"
+import { useEffect } from "react";
 import { useForm } from "react-hook-form"
 import { NavLink, useNavigate } from "react-router";
 import { toast } from "sonner";
@@ -43,6 +44,26 @@ export default function SignUp() {
     // const setEmail = useAuthStore((state) => state.setEmail);
     // const setRole = useAuthStore((state) => state.setRole);
     const setUser = useAuthStore((state) => state.setUser);
+
+    useEffect(()=>{
+      const checkSession = async() =>{
+        const {
+          data : {session},
+        } = await supabase.auth.getSession();
+
+          
+        if(session?.user){
+          setUser({
+            id:session.user.id,
+            email:session.user.email as string,
+            role:session.user.role as string,
+          })
+          navigate("/")
+        }
+      }
+      checkSession()
+    },[])
+
 
 
     //소셜 로그인(구글)

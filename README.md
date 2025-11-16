@@ -183,3 +183,9 @@ npx shadcn@latest add alert-dialog
 
 # vercel
 https://vercel.com/login
+
+# 직접 URL 오류가 날경우
+vercel.json 생성
+{
+  rewrites:[{"source":"/(.*)","destination":"/"}]
+}

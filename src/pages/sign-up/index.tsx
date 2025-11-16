@@ -1,3 +1,4 @@
+import { useAuthStore } from "@/components/stores";
 import { Button, Input, Label } from "@/components/ui";
 import { Checkbox } from "@/components/ui";
 import {
@@ -14,7 +15,7 @@ import supabase from "@/lib/supabase";
 import { zodResolver } from "@hookform/resolvers/zod"
 import { Separator } from "@radix-ui/react-separator";
 import { ArrowLeft, Asterisk, ChevronRight } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form"
 import { NavLink, useNavigate } from "react-router";
 import { toast } from "sonner";
@@ -53,6 +54,27 @@ export default function SignIn() {
     },
   })
 
+  const setUser = useAuthStore((state) => state.setUser);
+
+  useEffect(()=>{
+    const checkSession = async() =>{
+      const {
+        data : {session},
+      } = await supabase.auth.getSession();
+
+        
+      if(session?.user){
+        setUser({
+          id:session.user.id,
+          email:session.user.email as string,
+          role:session.user.role as string,
+        })
+        navigate("/")
+      }
+    }
+    checkSession()
+  },[])
+  
   const onSubmit = async(values : z.infer<typeof formSchema>) =>{
     console.log('회원가입 버튼 클릭 ')
 
