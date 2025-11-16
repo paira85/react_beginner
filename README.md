@@ -189,3 +189,22 @@ vercel.json 생성
 {
   rewrites:[{"source":"/(.*)","destination":"/"}]
 }
+
+# GOOGLE LOGIN 연동 재정리
+
+1. 구글 콘솔
+https://console.cloud.google.com/auth/clients/282218998830-f64l2d1k8vs1e642p9r9jfu6lm0p0jag.apps.googleusercontent.com?hl=en&project=supabase-oauth-478404
+2. api & services > oauth > client > web application
+3. client ids  & Client Secret (for OAuth) 복사
+
+https://supabase.com/dashboard/project/ylqjxewsinkbdmfifaqg/auth/providers?provider=Google
+4. 슈퍼베이스 > sign in providers > google > enable
+5. client ids / callbacll URL 붙여넣기
+6. callback URL 복사
+7. Google console에 redirect url 붙여넣기
+
+https://vercel.com/momoseungmos-projects/~/settings/environment-variables
+8. vercel 프로젝트 연동
+9. VITE_SUPABASE_BASE_URL  == 웹사이트 경로 https://react-beginner-7qki.vercel.app/
+10. 로그인 콜백시 
+  redirectTo : `${import.meta.env.VITE_SUPABASE_BASE_URL}/auth/callback` // 로그인 후 돌아올 URL
