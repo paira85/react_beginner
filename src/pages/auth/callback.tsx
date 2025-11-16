@@ -1,4 +1,4 @@
-import { useAuthStore } from "@/components/stores";
+// import { useAuthStore } from "@/components/stores";
 import supabase from "@/lib/supabase";
 import { useEffect } from "react";
 import { useNavigate } from "react-router"
