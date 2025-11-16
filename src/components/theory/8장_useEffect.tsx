@@ -1,7 +1,7 @@
 import {useState , useEffect}  from "react";
-//제7강
+//제8강
 function App() {
-  //제7강
+  //제8강
   const [value , setValue] = useState<number>(0);
   const [name , setName] = useState<String>("빈 문자열");
   const [nickName , setNickName] = useState<String>("빈 문자열");
