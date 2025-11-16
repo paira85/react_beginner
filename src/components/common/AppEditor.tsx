@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { useCreateBlockNote } from "@blocknote/react";
 // Or, you can use ariakit, shadcn, etc.
 import { BlockNoteView } from "@blocknote/mantine";
@@ -8,11 +8,10 @@ import "@blocknote/mantine/style.css";
 // Include the included Inter font
 import "@blocknote/core/fonts/inter.css";
 import type { Block } from "@blocknote/core";
-import { readonly } from "zod";
 
 interface Props{
   props? : Block[];
-  setContent? : (content:Block[]) => void;
+  setContent? : ((content: Block[]) => void | undefined) | undefined;
   readonly? : boolean;
 }
 
@@ -49,7 +48,7 @@ export function AppEditor( {props, setContent, readonly} : Props) {
   // Render the editor
   return <BlockNoteView editor={editor} editable={!readonly} onChange={()=>{
     if (!readonly){
-      setContent(editor.document)
+      setContent?.(editor.document) 
     }
   }}/>;
 }

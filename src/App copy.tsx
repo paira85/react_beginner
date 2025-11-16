@@ -1,4 +1,4 @@
-import {useState , useEffect, useMemo, useCallback , useRef}  from "react";
+import {useRef}  from "react";
 import './App.css';
 //제10강
 //useRef

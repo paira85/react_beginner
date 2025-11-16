@@ -27,6 +27,10 @@ export default function AuthCallback() {
             .eq("id",user.id)
             .single()
 
+            if(selectError){
+                return;
+            }
+
             if(!existing){
                 const { error:insertError} = await supabase
                 .from('user')

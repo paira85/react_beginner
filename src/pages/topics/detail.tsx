@@ -2,10 +2,9 @@ import { AppEditor } from '@/components/common';
 import { useAuthStore } from '@/components/stores';
 import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle, AlertDialogTrigger, Button, Separator } from '@/components/ui';
 import supabase from '@/lib/supabase';
-import { Arrow } from '@radix-ui/react-select';
 import dayjs from 'dayjs';
 import { ArrowLeft, Trash2 } from 'lucide-react';
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router'
 import { toast } from 'sonner';
 

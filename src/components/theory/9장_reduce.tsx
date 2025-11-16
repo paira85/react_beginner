@@ -1,4 +1,4 @@
-import {useState , useEffect, useMemo}  from "react";
+import {useState ,  useMemo}  from "react";
 //제9강
 
 //계산되는 데이터를 반복적으로 사용할때는, 최종 결과 값이 변경 되면 렌더링 되도록 사용
@@ -18,9 +18,10 @@ const getAverage = (numbers:number[]) =>{
 
   //배열의 키별로 카운터 처리
   const fruits = ["apple", "banana", "apple", "orange", "banana", "apple"];
-  
+  type FruitCounter = Record<string, number>;
+
   //counter => 어떤한 형태의 결과 값이 될 수 있음, 최초 지정한 타입
-  const fruitCounts = fruits.reduce((counter, fruit) => {
+  const fruitCounts = fruits.reduce((counter:FruitCounter, fruit) => {
     counter[fruit] = fruit in counter ? counter[fruit] + 1 : 1;
     // ^? (parameter) counter: {}
     return counter;

@@ -2,10 +2,10 @@
 import { CircleSmall, NotebookPen, PencilLine } from 'lucide-react';
 import '../App.css';
 import {AppDraftDialog, AppSidebar } from '../components/common';
-import { SkeletonHotTopic , SkeletonNewTopic} from '../components/skeleton/index'
+import { SkeletonHotTopic } from '../components/skeleton/index'
 
 import { Button} from '../components/ui';
-import { useNavigate, useParams, useSearchParams } from 'react-router';
+import { useNavigate, useSearchParams } from 'react-router';
 import { useAuthStore } from '@/components/stores';
 import { toast } from 'sonner';
 import supabase from '@/lib/supabase';
@@ -45,6 +45,11 @@ export default function App() {
     .select()
     
     console.log(data)
+
+    if(error){
+      console.error(error)
+      throw error;
+    }
 
     if(data){
       toast.success("토픽을 생성하였습니다.")   

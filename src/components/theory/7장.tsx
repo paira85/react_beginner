@@ -3,8 +3,8 @@ import {useState} from "react";
 function App() {
   //제7강
   const [value , setValue] = useState<number>(0);
-  const [name , setName] = useState<String>("빈 문자열로 할당하지 않은 name 상태 값입니다.");
-  const [nickName , setNickName] = useState<String>("빈 문자열로 할당하지 않은 nickname 상태 값입니다.");
+  const [name , setName] = useState<string>("빈 문자열로 할당하지 않은 name 상태 값입니다.");
+  const [nickName , setNickName] = useState<string>("빈 문자열로 할당하지 않은 nickname 상태 값입니다.");
 
   const increment = () => setValue(value+1)
   const decrement = () => setValue(value-1)

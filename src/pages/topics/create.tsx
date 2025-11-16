@@ -1,6 +1,6 @@
 import { AppEditor, AppFileUpload } from "@/components/common";
 import { useAuthStore } from "@/components/stores";
-import { Button, Input, Label, Skeleton } from "@/components/ui";
+import { Button, Input, Label } from "@/components/ui";
 import { Select, SelectContent, SelectGroup, SelectItem, SelectLabel, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { TOPIC_CATEGORY } from "@/constants/category.constant";
 import supabase from "@/lib/supabase";

@@ -180,3 +180,6 @@ npx shadcn@latest add card
 
 # alert-dialog
 npx shadcn@latest add alert-dialog
+
+# vercel
+https://vercel.com/login

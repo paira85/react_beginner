@@ -11,7 +11,6 @@ import {
 } from "@/components/ui/form"
 import supabase from "@/lib/supabase";
 import { zodResolver } from "@hookform/resolvers/zod"
-import { useEffect } from "react";
 import { useForm } from "react-hook-form"
 import { NavLink, useNavigate } from "react-router";
 import { toast } from "sonner";

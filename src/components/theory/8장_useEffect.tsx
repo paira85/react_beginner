@@ -2,12 +2,12 @@ import {useState , useEffect}  from "react";
 //제8강
 function App() {
   //제8강
-  const [value , setValue] = useState<number>(0);
-  const [name , setName] = useState<String>("빈 문자열");
-  const [nickName , setNickName] = useState<String>("빈 문자열");
+  // const [value , setValue] = useState<number>(0);
+  const [name , setName] = useState<string>("빈 문자열");
+  const [nickName , setNickName] = useState<string>("빈 문자열");
 
-  const increment = () => setValue(value+1)
-  const decrement = () => setValue(value-1)
+  // const increment = () => setValue(value+1)
+  // const decrement = () => setValue(value-1)
 
   const onChaneName = (event:React.ChangeEvent<HTMLInputElement>) => setName(event?.target.value)
   const onChaneNickName = (event:React.ChangeEvent<HTMLInputElement>) => setNickName(event?.target.value)
