@@ -91,3 +91,92 @@ npx shadcn@latest add separator
 
 # button
 npx shadcn@latest add button
+
+# https://www.iconfinder.com/search?q=user
+
+
+# reactRouter
+https://reactrouter.com/start/declarative/installation
+
+<Outlet /> : 해당페이지 영역만 변환되고 나머지는 변환되지 않는다. <header>(Outlet : Main)<footer>
+
+# react 기본 펑션
+rfc
+
+# Label
+npx shadcn@latest add label
+/ui/index.ts 에 임포트 작성
+
+# input
+npx shadcn@latest add input
+/ui/index.ts 에 임포트 작성
+
+# form
+npx shadcn@latest add form
+
+# checkbox
+npx shadcn@latest add checkbox
+
+
+# 수퍼베이스
+Supabase는 Firebase와 비슷한 오픈소스 백엔드 서비스(BaaS, Backend as a Service) 플랫폼이에요.
+기본적으로 “PostgreSQL 기반의 Firebase 대체재”라고 보면 됩니다.
+
+https://supabase.com/
+
+database pw : 2J41j75OBdZ76Z9h
+database pw : 2J41j75OBdZ76Z9h
+
+설치 
+https://supabase.com/docs/reference/javascript/start
+
+이메일 인증 설정 - 임시 차단
+https://supabase.com/dashboard/project/ylqjxewsinkbdmfifaqg/auth/providers
+Confirm email = 비활성화
+
+패스워드 베이스 설정
+https://supabase.com/docs/guides/auth/passwords
+
+# sonner
+toast alert
+npx shadcn@latest add sonner
+
+# 수퍼베이스 DATABASE 생성
+FE 리액트 24강 참조
+table 권한 설정
+https://supabase.com/dashboard/project/ylqjxewsinkbdmfifaqg/auth/policies?search=17495&schema=public
+api docs
+https://supabase.com/dashboard/project/ylqjxewsinkbdmfifaqg/editor/17495
+
+# zustand 
+전역상태관리
+npm install zustand
+
+https://zustand-demo.pmnd.rs/
+
+# persist
+로컬스토리지 세션 저장
+
+# BlockNote
+edit
+npm install @blocknote/core @blocknote/react @blocknote/mantine
+
+
+# nanoid == uuid
+npm install nanoid 
+
+# dialog
+npx shadcn@latest add dialog
+
+# badge
+npx shadcn@latest add badge
+
+
+# dayjs
+npm install dayjs
+
+# card
+npx shadcn@latest add card
+
+# alert-dialog
+npx shadcn@latest add alert-dialog

@@ -1,8 +1,12 @@
 import { ChevronDown } from "lucide-react"
-import { CLASS_CATEGORY } from "../constants/category.constant"
+import { CLASS_CATEGORY } from "../../constants/category.constant"
 import { Button } from "../ui"
 
-function AppSidebar() {
+interface Props{
+    category :string | null;
+    setCategory : (value:string) => void;
+}
+function AppSidebar({category,setCategory} : Props) {
 {/*카테고리 사이드 바  */}
     return (
         <aside className="min-w-60 w-60 flex flex-col gap-6">
@@ -21,7 +25,8 @@ function AppSidebar() {
                     // { hover:pl-6	호버 시 왼쪽 여백 변경	마우스를 올리면 padding-left: 1.5rem; (기본 6단계) 적용됨 }
                     // { transition-all	전환 효과 적용	모든 속성(색상, 여백 등)에 트랜지션(부드럽게 변화) 효과를 줌}
                     // { duration-500	전환 시간 설정	트랜지션 효과가 0.5초(500ms) 동안 실행됨
-                    <Button key={item.id} variant={"ghost"} className="justify-start text-muted-foreground hover:Text-white hover:pl-6 transition-all duration-500">
+                    <Button key={item.id} variant={"ghost"} className={`justify-start text-muted-foreground hover:Text-white hover:pl-6 transition-all duration-500 ${category === item.category && "text-foreground !pl-6 bg-accent/50"}`}
+                        onClick={()=>{setCategory(item.category)}}>
                     {item.icon}
                     {item.label}
                     </Button>
